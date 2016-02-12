@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import Style from './styles.scss'
+import Styles from './styles.scss'
 
 const propTypes = {
   token: PropTypes.string.isRequired,
@@ -10,10 +10,10 @@ const propTypes = {
 export default function ScoreBoardCell({ token, score }) {
   return (
     <Row>
-      <Col xs={2} md={2} lg={2} className={Style.token}>
+      <Col xs={2} md={2} lg={2} className={Styles.token}>
         {token}
       </Col>
-      <Col xs={3} md={3} lg={3} className={Style.score}>
+      <Col xs={3} md={3} lg={3} className={Styles.score}>
         {score}
       </Col>
       <Col xs={7} md={7} lg={7} />
