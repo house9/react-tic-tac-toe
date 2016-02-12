@@ -2,10 +2,15 @@ import React from 'react'
 
 class Game extends React.Component {
   componentWillMount() {
-    this._setToken(this.props)
+    this.setToken(this.props)
   }
   componentWillReceiveProps(nextProps) {
-    this._setToken(nextProps)
+    this.setToken(nextProps)
+  }
+  setToken(props) {
+    this.setState({
+      token: props.params.token.toUpperCase()
+    })
   }
   render() {
     return (
@@ -13,11 +18,6 @@ class Game extends React.Component {
         You are <span>{this.state.token}</span>
       </div>
     )
-  }
-  _setToken(props) {
-    this.setState({
-      token: props.params.token.toUpperCase()
-    })
   }
 }
 

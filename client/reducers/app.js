@@ -2,7 +2,13 @@
 // import ActionTypes from 'constants/ActionTypes'
 import createReducer from 'utils/createReducer'
 
-const initialState = {}
+const initialState = {
+  scores: [
+    { token: 'X', score: 0 },
+    { token: 'O', score: 0 },
+    { token: 'CAT', score: 0 }
+  ]
+}
 
 const handlers = {
   // Pattern:
