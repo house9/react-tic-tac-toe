@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-class Game extends React.Component {
+export default class Game extends React.Component {
+  static propTypes = {
+    gameOver: PropTypes.func.isRequired
+  };
   componentWillMount() {
     this.setToken(this.props)
   }
@@ -13,12 +16,19 @@ class Game extends React.Component {
     })
   }
   render() {
+    const { gameOver } = this.props
+
     return (
       <div>
-        You are <span>{this.state.token}</span>
+        <div>
+          You are <span>{this.state.token}</span>
+        </div>
+        <div>
+          <button onClick={ () => gameOver('X') }>X</button>
+          <button onClick={ () => gameOver('O') }>O</button>
+          <button onClick={ () => gameOver('CAT') }>CAT</button>
+        </div>
       </div>
     )
   }
 }
-
-export default Game
